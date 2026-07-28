@@ -1,4 +1,7 @@
-const BASE = '/api/puzzles';
+// Backend URL — hardcoded as a reliable fallback since env vars weren't
+// reaching the production build. Change this if the backend URL changes.
+const BACKEND_URL = 'https://sudoku-app-rvmq.onrender.com';
+const BASE = `${BACKEND_URL}/api/puzzles`;
 
 export async function fetchNewPuzzle(difficulty) {
   const res = await fetch(`${BASE}/new?difficulty=${difficulty}`);
